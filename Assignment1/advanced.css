@@ -1,0 +1,68 @@
+/* 
+  CSE186 Assignment 1
+
+  CSS for Advanced Requirement 
+*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    user-select: none;
+}
+
+
+p {
+    font-size: 40px;
+    font-family: "Lucida Console", Courier, monospace;
+}
+
+#DEPT {
+    background-color: navy;
+    text-align: left;
+    vertical-align: top;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+
+}
+
+#DEPT .char {
+    display: inline-block;
+    width: 100px;
+    height: 180px;
+}
+
+#DEPT .char:hover {
+    background-color: white;
+    color: black;
+}
+
+#NUM {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    display: flex;
+    border: 10px solid yellow;
+}
+
+#NUM .char {
+    background-color: black;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: yellow;
+}
+
+#NUM .char:hover {
+    background-color: yellow;
+    color: black;
+}
+

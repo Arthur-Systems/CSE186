@@ -1,0 +1,91 @@
+/* 
+  CSE186 Assignment 1
+
+  CSS for Stretch Requirement using two or all of the following:
+
+    Gradients
+    Transtitions
+    Animations
+
+  Partial credit for using just one.
+*/
+
+
+@keyframes Spin {
+    0%, 100% {
+        left: 0;
+        transform: scale(1) rotate(0deg);
+        background: linear-gradient(0deg, navy, Crimson);
+    }
+    25% {
+        left: 25%;
+        transform: scale(1.5) rotate(90deg);
+        background: linear-gradient(120deg, navy, Crimson);
+    }
+    50% {
+        left: 50%;
+        transform: scale(1) rotate(180deg);
+        background: linear-gradient(240deg, navy, Crimson);
+    }
+    75% {
+        left: 90%;
+        transform: scale(1.5) rotate(270deg);
+        background: linear-gradient(360deg, navy, Crimson);
+    }
+}
+
+@keyframes Gradient {
+  0%, 100% {
+    background: linear-gradient(0deg, navy, Crimson);
+  }
+  25% {
+    background: linear-gradient(90deg, navy, Crimson);
+  }
+  50% {
+    background: linear-gradient(180deg, navy, Crimson);
+  }
+  75% {
+    background: linear-gradient(270deg, navy, Crimson);
+  }
+}
+
+#DEPT {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 150px;
+    animation: Spin 10s infinite linear;
+}
+
+#DEPT .char {
+    font-size: 100px;
+    font-family: "Lucida Console", Courier, monospace;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    transition: all 1s ease-in-out;
+    animation: Gradient 10s infinite linear;
+    background: linear-gradient(0deg, navy, Crimson);
+
+
+}
+
+#NUM {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    bottom: 150px;
+    right: 0;
+    animation: Spin 10s infinite reverse linear;
+        transition: all 1s ease-in-out;
+}
+
+#NUM .char {
+    font-size: 100px;
+    font-family: "comic sans ms", sans-serif;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+
+    background: linear-gradient(to bottom, navy, Crimson);
+}
