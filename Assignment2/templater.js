@@ -20,6 +20,8 @@ class Templater {
    * @param {string} template - A {{ }} tagged string
    */
   constructor(template) {
+    this.template = template;
+
   }
 
   /**
@@ -32,7 +34,8 @@ class Templater {
    *     found in map
    */
   apply(map, strict) {
-    return 'Not Implemented';
+
+
   }
 }
 

@@ -43,7 +43,6 @@ class Rpnc {
                     stack.push(a + b);
                 }
                else if (element === '-') {
-                   console.log("Subtraction Found!")
                     const a = stack.pop();
                     const b = stack.pop();
                     stack.push(b - a);
