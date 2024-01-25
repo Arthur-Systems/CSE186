@@ -37,16 +37,17 @@ class Templater {
       return undefined;
     }
     let result = this.template;
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions - JavaScript | MDN
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions - JavaScript REGEX
     const matches = this.template.match(/{{\s*\w+\s*}}/g);
     if (matches) {
       matches.forEach((match) => {
-        const tag = RegExp(/{{\s*(\w+)\s*}}/).exec(match)[1];
-        const value = map[tag];
-        if (value !== undefined) {
-          result = result.replace(match, value);
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions - JavaScript REGEX
+        const template = RegExp(/{{\s*(\w+)\s*}}/).exec(match)[1];
+        const newText = map[template];
+        if (newText !== undefined) {
+          result = result.replace(match, newText);
         } else if (strict) {
-          throw new Error(`Missing tag ${tag} in map`);
+          throw new Error(`Missing tag ${template} in map`);
         } else {
           result = result.replace(match, '');
           result = result.replace('  ', ' ');

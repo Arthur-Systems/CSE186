@@ -25,14 +25,11 @@ class Rpnc {
   evaluate(expression) {
     const stack = [];
     const expressionList = expression.split(' ');
-
     expressionList.forEach((element) => {
       if (!isNaN(element)) {
         stack.push(parseFloat(element));
       } else {
-        console.log('Operand Found!' + element);
-        console.log(stack);
-
+        // USED THE PUDO CODE FROM THE ASSIGNMENT
         if (stack.length < 2) {
           throw new Error('Invalid Expression');
         } else if (element === '+') {
