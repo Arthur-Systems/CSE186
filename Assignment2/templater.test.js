@@ -36,3 +36,35 @@ test('Missing Tag', () => {
   expect(t.apply({had: 'had', lamb: 'lamb'}))
       .toBe('Mary had a lamb');
 });
+
+/** */
+test('No Space Between Tags', () => {
+  const t = new Templater('Mary {{had}}{{little}}');
+  expect(t.apply({had: 'had', little: 'little'})).toBe('Mary hadlittle');
+});
+
+/** */
+test('Repeated Tags', () => {
+  const t = new Templater('Mary {{had}} {{had}}');
+  expect(t.apply({had: 'had'})).toBe('Mary had had');
+});
+
+/** */
+test('Tags Separated By Other Characters', () => {
+  const t = new Templater('Mary {{had}}-{{little}}');
+  expect(t.apply({had: 'had', little: 'little'})).toBe('Mary had-little');
+});
+
+/** */
+test('Strict - Missing Tag', () => {
+  const t = new Templater('Mary {{had}} a {{little}} {{lamb}}');
+  expect(() => t.apply({had: 'had', little: 'little'}, true))
+      .toThrow('Missing tag lamb in map');
+});
+
+/** */
+test('No Match', () => {
+  const t = new Templater('Mary had a little lamb');
+  expect(t.apply({had: 'had', little: 'little'}))
+      .toBe('Mary had a little lamb');
+});
