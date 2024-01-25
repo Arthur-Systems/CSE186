@@ -50,3 +50,8 @@ test('Invalid', () => {
   expect(() => new Rpnc().evaluate('3.4 + 1.1')).toThrowError();
 });
 
+/** */
+test('Len Of Stack Less then 1', () => {
+  expect(() => new Rpnc().evaluate('1 2 3 +'))
+      .toThrowError('Invalid Expression');
+});

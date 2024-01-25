@@ -68,13 +68,4 @@ class Rpnc {
   }
 }
 
-// TESTING SCRIPTS
-const calculator = new Rpnc();
-try {
-  const result = calculator.evaluate('3.4 1.1 -'); // Example expression
-  console.log('Result:', result);
-} catch (error) {
-  console.error('Error:', error.message);
-}
-
 module.exports = Rpnc;
