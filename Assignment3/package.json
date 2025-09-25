@@ -1,0 +1,40 @@
+{
+  "name": "cse196-assignment3",
+  "version": "2.0.0",
+  "description": "CSE196 Assignment 3 - JavsScript II",
+  "author": "David Harrison <dcharris@ucsc.edu>",
+  "license": "UNLICENSED",
+  "repository": "none",
+  "devDependencies": {
+    "bestzip": "*",
+    "eslint": "*",
+    "eslint-config-google": "*",
+    "jest": "*",
+    "puppeteer": "*",
+    "puppeteer-core": "*",
+    "puppeteer-to-istanbul": "*",
+    "nyc": "*"
+  },
+  "eslintConfig": {
+    "extends": [
+      "google"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 14
+    }
+  },
+  "jest": {
+    "collectCoverage": false,
+    "testTimeout": 10000,
+    "testMatch": [
+      "<rootDir>/*.test.js"
+    ]
+  },
+  "scripts": {
+    "coverage": "nyc report --reporter=html --reporter=text-summary",
+    "jest": "jest --runInBand",
+    "test": "npm run jest && npm run coverage",
+    "lint": "eslint *.js",
+    "zip": "bestzip CSE186-Assignment3-Submission.zip Templater.js picker.css Picker.js picker.test.js"
+  }
+}

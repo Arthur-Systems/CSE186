@@ -1,0 +1,29 @@
+/* 
+  CSE186 Assignment 1
+
+  CSS for Basic Requirement
+*/
+
+p {
+    margin-left:auto;
+    margin-right:auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: yellow;
+    width: 60px;
+    margin-bottom: 0px;
+    margin-top:0px;
+}
+
+span.char {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-family: Courier, monospace;
+    color: black;
+    text-align: center;
+}

@@ -137,3 +137,5 @@ dist
 *.iml
 gen
 .DS_Store
+/.idea
+/.idea
